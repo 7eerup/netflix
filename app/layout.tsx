@@ -5,6 +5,8 @@ import { ThemeProvider } from "config/material-tailwind-theme-provider";
 import ReactQueryClientProvider from "config/ReactQueryClientProvider";
 import Header from "components/header";
 import Footer from "components/footer";
+import { RecoilRoot } from "recoil";
+import RecoilProvider from "config/RecoilProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <RecoilProvider>
     <ReactQueryClientProvider>
     <ThemeProvider>
       {/* @ts-ignore */}
@@ -35,7 +38,7 @@ export default function RootLayout({ children }) {
           </body>
       </html>
     </ThemeProvider>
-
     </ReactQueryClientProvider>
+    </RecoilProvider>
   );
 }

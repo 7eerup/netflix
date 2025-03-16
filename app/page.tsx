@@ -1,5 +1,3 @@
-// import UI from "./ui"
-
 import UI from "./ui"
 
 export const metadata = {
